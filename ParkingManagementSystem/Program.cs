@@ -4,9 +4,8 @@
     {
         static void Main(string[] args)
         {
-            ParkingManagementSystem.ui.Menu.welcomeScreen();
-            ParkingManagementSystem.ui.Menu.showChooseOptions();
-
+            ParkingManagementSystem.controllers.LogicBuilder.Run();
         }
+
     }
 }
