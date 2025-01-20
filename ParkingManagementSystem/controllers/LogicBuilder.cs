@@ -5,6 +5,9 @@ namespace ParkingManagementSystem.controllers
 {
     public static class LogicBuilder
     {
+        private static readonly int minimumLevelOption = 1;
+        private static readonly int maximumLevelOption = 7;
+        private static Dictionary<DateTime, string> UserProblems = new Dictionary<DateTime, string>();
         public static void Run()
         {
             Menu.WelcomeScreen();
@@ -19,7 +22,7 @@ namespace ParkingManagementSystem.controllers
                 int selectedOption;
                 bool validInput = int.TryParse(Console.ReadLine(), out selectedOption);
 
-                if (validInput && selectedOption >= 1 && selectedOption <= 5)
+                if (validInput && selectedOption >= minimumLevelOption && selectedOption <= maximumLevelOption)
                 {
                     OptionHandler.HandleOption(selectedOption);
 
@@ -31,7 +34,6 @@ namespace ParkingManagementSystem.controllers
                 }
             }
         }
-
         public static bool AskToContinue()
         {
             while (true)
@@ -51,9 +53,7 @@ namespace ParkingManagementSystem.controllers
                 {
                     Menu.InvalidInputTextForYesAndNo();
                 }
-
             }
         }
     }
-
 }
