@@ -1,4 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
+﻿using ParkingManagementSystem.models;
 using ParkingManagementSystem.ui;
 
 namespace ParkingManagementSystem.controllers
@@ -7,13 +7,14 @@ namespace ParkingManagementSystem.controllers
     {
         public static void Run()
         {
-            Menu.welcomeScreen();
+            Menu.WelcomeScreen();
+            ParkingLot.GetInstance();
 
             bool continueRunning = true;
 
             while (continueRunning)
             {
-                Menu.showChooseOptions();
+                Menu.ShowChooseOptions();
 
                 int selectedOption;
                 bool validInput = int.TryParse(Console.ReadLine(), out selectedOption);
@@ -26,7 +27,7 @@ namespace ParkingManagementSystem.controllers
                 }
                 else
                 {
-                    Menu.invalidInputTextForNumbers();
+                    Menu.InvalidInputTextForNumbers();
                 }
             }
         }
@@ -35,20 +36,20 @@ namespace ParkingManagementSystem.controllers
         {
             while (true)
             {
-                Menu.askingForConfirmation();
+                Menu.AskingForConfirmation();
                 string continueInput = Console.ReadLine().Trim().ToLower();
                 if (InputChecker.IsValidOptionEntered(continueInput))
                 {
                     if (continueInput == "n")
                     {
-                        Menu.sayingGoodBye();
+                        Menu.SayingGoodBye();
                         return false;
                     }
                     return true;
                 }
                 else
                 {
-                    Menu.invalidInputTextForYesAndNo();
+                    Menu.InvalidInputTextForYesAndNo();
                 }
 
             }
