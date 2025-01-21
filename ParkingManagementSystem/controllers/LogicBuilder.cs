@@ -6,7 +6,7 @@ namespace ParkingManagementSystem.controllers
     public static class LogicBuilder
     {
         private static readonly int minimumLevelOption = 1;
-        private static readonly int maximumLevelOption = 7;
+        private static readonly int maximumLevelOption = 4;
         private static Dictionary<DateTime, string> UserProblems = new Dictionary<DateTime, string>();
         public static void Run()
         {
@@ -17,6 +17,7 @@ namespace ParkingManagementSystem.controllers
 
             while (continueRunning)
             {
+                Menu.PriceList();
                 Menu.ShowChooseOptions();
 
                 int selectedOption;

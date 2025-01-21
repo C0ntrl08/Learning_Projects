@@ -6,7 +6,18 @@ namespace ParkingManagementSystem
     {
         static void Main(string[] args)
         {
-            ParkingManagementSystem.controllers.LogicBuilder.Run();
+
+            try
+            {
+                ParkingManagementSystem.controllers.LogicBuilder.Run();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An unexpected error occurred: " + ex.Message.ToString());
+            }
+
+            
+
             
         }
 

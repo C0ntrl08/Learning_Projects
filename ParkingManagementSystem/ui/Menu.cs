@@ -18,11 +18,19 @@ namespace ParkingManagementSystem.ui
             Console.WriteLine("Select the wanted action: ");
             Console.WriteLine("1. I park my car");
             Console.WriteLine("2. I park my motorcycle");
-            Console.WriteLine("3. I am taking my vehicle out");
-            Console.WriteLine("4. Pay for parking");
-            Console.WriteLine("5. Extend parking time");
-            Console.WriteLine("6. Reporting a problem");
+            Console.WriteLine("3. Pay for parking");
+            Console.WriteLine("4. Reporting a problem");
         }
+
+        public static void PriceList()
+        {
+            Console.WriteLine("/////////////////////////////////////////");
+            Console.WriteLine("Price list: ");
+            Console.WriteLine("[Cars] -> [1.50] euros pro minute");
+            Console.WriteLine("[Motorcycles] -> [1.10] euros pro minute");
+            Console.WriteLine("/////////////////////////////////////////");
+        }
+
         public static void AskingForConfirmation()
         {
             Console.WriteLine("Do you want to perform another action? (y/n)");
@@ -61,7 +69,8 @@ namespace ParkingManagementSystem.ui
 
         public static void VehicleHasBeenParked()
         {
-            Console.WriteLine("Vehicle has been parked.");
+            DateTime now = DateTime.Now;
+            Console.WriteLine($"Vehicle has been parked at {now:HH:mm}");
         }
 
         public static void DescribeProblem()
@@ -77,6 +86,16 @@ namespace ParkingManagementSystem.ui
         public static void RemovingTheVehicle()
         {
             Console.WriteLine("Please enter the license plate number to remove the vehicle: ");
+        }
+
+        public static void PlateAlreadyRegistered()
+        {
+            Console.WriteLine("This license plate already exists. Please enter a different one: ");
+        }
+
+        public static string MessageEmpty()
+        {
+            return "The message can't be empty.";
         }
 
     }

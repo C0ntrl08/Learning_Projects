@@ -12,5 +12,10 @@
         {
             return inputLetter == "y" || inputLetter == "n";
         }
+
+        public static bool IsTextNullOrEmpty(string enteredText)
+        {
+            return string.IsNullOrEmpty(enteredText) || enteredText.Length == 0;
+        }
     }
 }
