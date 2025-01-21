@@ -37,8 +37,8 @@ The project has been created to practice the C# Language with the OOP principles
 - **Report Problem**: Enter a description of any problem encountered in the parking lot.
 
 ## Price List
-- **Cars: €1.50 per minute
-- **Motorcycle €1.10 per minute
+- **Cars**: €1.50 per minute
+- **Motorcycles**: €1.10 per minute
 
 ## Error Handling
 A global error handling mechanism is implemented in the Program.cs file to catch and display any unexpected errors that occur during runtime.
